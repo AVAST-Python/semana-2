@@ -3,6 +3,7 @@
 # Introducción a Python
 
 ## Semana 2
+<!-- .element style="text-align:center" -->
 
 ![alt text](./img/logo2.png) <!-- .element style="margin-left: auto; margin-right: auto; display: block" -->
 
@@ -11,33 +12,20 @@ Pasar la [encuesta](https://forms.gle/62m79xAeYoMCi8WV8)
 
 ---
 
-![alt text](./img/jim-carrey-jim-carrey-typing.gif) <!-- .element style="margin-left: auto; margin-right: auto; display: block" -->
+## Encuesta de Sistemas Operativos
+
+- Tendréis que instalar Python en algún momento
+- Necesito saber el sistema operativo que utilizais:
+  - Encuesta:
+    [https://forms.gle/ZPJbbko1yWn1Q47K8](https://forms.gle/ZPJbbko1yWn1Q47K8)
+
+    (lo paso por el grupo)
 
 ---
-
-# Tenemos un plan
-
-![Tenemos un plan](./img/tenemos_un_plan.jpg) <!-- .element class="medium right" -->
-
-### Parte I: programación
-- Python básico
-- Algoritmos
-- Herramientas de programación (git, tests, etc.)
-- Proyecto final: juego
-- Proyecto extra: bot de Telegram
-
-### Parte II: Inteligencia Artificial
-- Introducción a la IA
-- Modelos con Tensorflow / Pytorch
-- Proyecto final: reconocimiento de fotografías
-
-
----
-
 
 ### La programación son cinco cosas
 
-1. Secuencia
+1. ~~Secuencia~~ ✓
 2. Condicionales
 3. Repetición
 4. Variables
@@ -46,103 +34,27 @@ Pasar la [encuesta](https://forms.gle/62m79xAeYoMCi8WV8)
 
 ---
 
-# ¡A pintá!
+# Enlaces:
 
 
-![Una casita](./img/casita.png) <!-- .element class="big center" -->
+- Tortuga: [https://pythonandturtle.com/turtle](https://pythonandturtle.com/turtle)
+- Presentación de la semana anterior:
+  [https://avast-python.github.io/semana-1](https://avast-python.github.io/semana-1)
+- Presentación de esta semana:
+  [https://avast-python.github.io/semana-2](https://avast-python.github.io/semana-2)
 
---
+En la presentación de la semana anterior tenéis los movimientos básicos de la tortuga.
 
-[https://pythonandturtle.com/turtle](https://pythonandturtle.com/turtle)
+**Ejemplo para acordarse: un cuadrado**
 
-### Estructura básica de código
-
-
-```python [0|1-2|4-14|16]
-# Turtle script example
-t = turtle.Turtle('turtle')
-
-t.width(1)
-t.speed (1)
-t.color('red')
-
-t.forward(50)
-
-for i in range(4):
-  t.forward(100)
-  t.left(90)
-
-t.backward(50)
-
-turtle.done()
-```
-
-- Inicialización (siempre igual)
-- Hacer cosas
-- Terminar (siempre igual)
-
-
---
-
-### Mover la tortuga
-
-- Velocidad
-
-```python
-t.speed(1) # 1 lento, 500 rápido
-```
-
-- Avanzar / Retroceder:
-
-```python
-t.forward(50)
-t.backward(50)
-
-t.forward(-50)
-t.backward(-50)
-```
-
-- Girar. En º y admite negativos:
-
-
-```python
-t.left(90)
-t.right(45)
-```
-
-- Control del lápiz
-
-```python
-t.penup()
-t.pendown()
-t.color('red')
-```
-
---
-
-# Pues a pintá
-
-[https://pythonandturtle.com/turtle](https://pythonandturtle.com/turtle)
-<!-- .element class="centered" style="margin-top: -3rem;" -->
-
-**OJO**: las mayúsculas/minúsculas son importantes
-<!-- .element class="centered" -->
-
-**OJO**: la alineación del código es importante
-<!-- .element class="centered" -->
-
-![Ejercicio 1](./img/ejercicio_1.png) <!-- .element class="noborder center" -->
-
-- *Extra*: Dibuja un triángulo isósceles
-- *Super extra*: Dibuja un triángulo isósceles... y no lo hagas "a ojo"
-
-Note:
-- Ejemplo: cuadrado
-https://docs.python.org/3/library/turtle.html#turtle-graphics-reference
+Notes:
+Poner un cuadrado
 
 ---
 
 # Repeticiones
+
+Tiene que repetir las cosas el ordenador, no nosotros.
 
 ```python [0|1-2|5-8|5|6-8|10-11]
 # Hago cosas antes
@@ -157,11 +69,15 @@ for num_vuelta in range(3):
 # Luego puedo hacer más cosas
 t.forward(100)
 ```
+<!-- .element: class="fragment" -->
+
 <!-- .element style="font-size: 0.8em" -->
 
-- Se pueden hacer cosas antes
-- La alineación nos dice lo que va "dentro" del `for`
-- Después de repetir, el programa continuará como si tal cosa
+<ul class="fragment">
+  <li>Se pueden hacer cosas antes</li>
+  <li>La alineación nos dice lo que va "dentro" del `for`</li>
+  <li>Después de repetir, el programa continuará como si tal cosa</li>
+</ul>
 
 ---
 
@@ -181,12 +97,20 @@ t.forward(100)
 
 - Puedo utilizar funciones "de calculadora"
 - Ojo a la precedencia de operadores: los paréntesis nunca están de más.
-- No todo son números
+- No todo son números:
+  - Se pueden utilizar expresiones con cadenas
+  - Las cadenas y los números son cosas diferentes
+  - Hay más tipos que iremos viendo
 
 Notes:
 Precedencia:
 - `1+2*6`
 - `10/2*5`
+
+Ejemplos sin números:
+- `"patata" + "chorizo"`
+- `"patata" * 2`
+- `"2" + 2`
 
 ---
 
@@ -229,7 +153,7 @@ print(mi_variable)
 
 ```python
 lado = 10
-vueltas = 3
+vueltas = 10
 for num_vuelta in range(vueltas):
     t.forward(num_vuelta * lado)
     t.left(90)
@@ -277,7 +201,7 @@ y la suma es igual a 180° × (lados – 2).
 
 # A almorzá
 
-- Presentación: [https://avast-python.github.io/semana-1/](https://avast-python.github.io/semana-1/)
-- Soluciones: [https://github1s.com/AVAST-Python/semana-1](https://github1s.com/AVAST-Python/semana-1)
+- Presentación: [https://avast-python.github.io/semana-2/](https://avast-python.github.io/semana-2/)
+- Soluciones: [https://github1s.com/AVAST-Python/semana-2](https://github1s.com/AVAST-Python/semana-2)
 
 
