@@ -1,47 +1,51 @@
 import turtle
+from configure_screen import position_screen
 
 t = turtle.Turtle('turtle')
-# t.screen.setup(width=1000, height=1000, startx=0, starty=0)
+position_screen(t)
 
 t.width(4)
-t.speed (50)
+t.speed (500)
 t.color('#4689BC')
 
 t.penup()
-t.goto(-250, 0)
+t.goto(-450, 100)
 t.pendown()
 
 
-# Polígono regular
-lados = 5
-largo_lado = 100
-
-angulo_interno = 180 * (lados - 2) / lados
-angulo_giro = 180 - angulo_interno
-
-for vuelta in range(lados):
-    t.forward(largo_lado)
-    t.left(angulo_giro)
+# Escalera reducing
+for vuelta in range(4):
+    t.left(90)
+    t.forward(100-25*vuelta)
+    t.right(90)
+    t.forward(100-25*vuelta)
 
 
 t.penup()
-t.goto(100, 0)
-t.setheading(0)
+t.goto(-250, 100)
 t.pendown()
 
-# Extra: con el vértice abajo
-lados = 5
-largo_lado = 100
+# Pinchos increasing
+for vuelta in range(7):
+    t.left(90)
+    t.forward(30*vuelta)
+    t.left(180)
+    t.forward(30*vuelta)
+    t.left(90)
+    t.forward(30*vuelta)
 
-angulo_interno = 180 * (lados - 2) / lados
-angulo_giro = 180 - angulo_interno
-giro_inicial = 90 - angulo_interno / 2
 
-t.left(giro_inicial)
-for vuelta in range(lados):
-    t.forward(largo_lado)
-    t.left(angulo_giro)
+t.penup()
+t.goto(-150, -250)
+t.pendown()
 
+# Extra: Flor
+lado = 10
+vueltas = 30
+for num_vuelta in range(vueltas):
+
+    t.forward(num_vuelta * lado)
+    t.left(90+10)
 
 t.hideturtle()
 turtle.exitonclick()

@@ -1,68 +1,47 @@
 import turtle
+from configure_screen import position_screen
 
 t = turtle.Turtle('turtle')
-# t.screen.setup(width=1300, height=1000, startx=0, starty=0)
+position_screen(t)
 
 t.width(4)
-t.speed (500)
+t.speed (50)
 t.color('#4689BC')
 
 t.penup()
-t.goto(-450, 0)
+t.goto(-250, 0)
 t.pendown()
 
 
-# Cuadrado
-for vuelta in range(4):
-    t.forward(100)
-    t.left(90)
+# Polígono regular
+lados = 5
+largo_lado = 100
+
+angulo_interno = 180 * (lados - 2) / lados
+angulo_giro = 180 - angulo_interno
+
+for vuelta in range(lados):
+    t.forward(largo_lado)
+    t.left(angulo_giro)
 
 
 t.penup()
-t.goto(-200, 0)
-t.pendown()
-
-
-# Escalera
-for vuelta in range(4):
-    t.left(90)
-    t.forward(100)
-    t.right(90)
-    t.forward(100)
-
-
-
-t.penup()
-t.goto(-450, -200)
-t.pendown()
-
-
-# Pinchos
-for vuelta in range(4):
-    t.left(90)
-    t.forward(100)
-    t.left(180)
-    t.forward(100)
-    t.left(90)
-    t.forward(100)
-
-
-t.penup()
+t.goto(100, 0)
 t.setheading(0)
-t.forward(50)
 t.pendown()
 
+# Extra: con el vértice abajo
+lados = 5
+largo_lado = 100
 
-# Pinchos extended
-# Hacer de al menos 2 formas diferentes
-t.forward(100)
-for vuelta in range(4):
-    t.left(90)
-    t.forward(100)
-    t.left(180)
-    t.forward(100)
-    t.left(90)
-    t.forward(100)
+angulo_interno = 180 * (lados - 2) / lados
+angulo_giro = 180 - angulo_interno
+giro_inicial = 90 - angulo_interno / 2
+
+t.left(giro_inicial)
+for vuelta in range(lados):
+    t.forward(largo_lado)
+    t.left(angulo_giro)
 
 
 t.hideturtle()
