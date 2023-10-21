@@ -87,7 +87,7 @@ t.forward(100)
 <!-- .element class="centered" style="margin-top: -3rem;" -->
 
 
-![Ejercicio 2](./img/ejercicio_1.png) <!-- .element class="noborder center" -->
+![Ejercicio 1](./img/ejercicio_1.png) <!-- .element class="noborder center" -->
 
 ---
 
